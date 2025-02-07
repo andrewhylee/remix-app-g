@@ -4,11 +4,13 @@
   "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "remix vite:build",
+    "build_o": "remix vite:build",
     "dev": "remix vite:dev",
     "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
     "start": "remix-serve ./build/server/index.js",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "build": "remix build",
+    "deploy": "remix build && git add . && git commit -m 'Deploy' && git push origin gh-pages"
   },
   "dependencies": {
     "@remix-run/node": "^2.15.3",
