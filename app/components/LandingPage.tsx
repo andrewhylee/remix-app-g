@@ -6,18 +6,15 @@ import { WorkSection } from "./WorkSection";
 import { PricingSection } from "./PricingSection";
 import { FAQSection } from "./FAQSection";
 import { Footer } from "./Footer";
+// import "../styles/landingPage.css";
 
 export const LandingPage: React.FC = () => {
   return (
-    <div>
-      <div className="w-full max-md:max-w-full">
-        <div className="w-full max-md:max-w-full">
-          <Navbar theme="dark" />
-          <IntroSection />
-        </div>
-      </div>
+    <div className="scroll-container">
+      <Navbar workToShowExists={false} />
+      <IntroSection />
       <ServiceSection />
-      <WorkSection />
+      <WorkSection workToShowExists={false} />
       <PricingSection />
       <FAQSection />
       <Footer />

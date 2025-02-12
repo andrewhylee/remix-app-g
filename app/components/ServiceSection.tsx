@@ -1,13 +1,14 @@
 import React from "react";
-import { Navbar } from "./Navbar";
 
 export const ServiceSection: React.FC = () => {
   return (
-    <div className="w-full bg-orange-50 max-md:max-w-full">
-      <div className="w-full min-h-[700px] max-md:max-w-full">
-        <Navbar theme="light" />
-        <div className="flex overflow-hidden flex-wrap flex-1 gap-4 px-6 pb-4 size-full max-md:px-5 max-md:max-w-full">
-          <div className="flex flex-col justify-center px-12 py-20 rounded-3xl border border-white border-solid bg-neutral-800 min-w-60 w-[947px] max-md:px-5 max-md:max-w-full">
+    <div
+      id="serviceSection"
+      className="ServiceSection scroll-section w-full bg-orange-50 max-md:max-w-full pt-16 pb-8"
+    >
+      <div className="w-full">
+        <div className="flex max-lg:flex-col gap-4 px-6 pb-4 size-full max-md:px-5 ">
+          <div className="flex flex-col justify-center px-12 py-20 rounded-3xl border border-white border-solid bg-neutral-800 min-w-60 max-md:px-5 max-md:max-w-full">
             <div className="text-6xl font-semibold tracking-tight leading-[56px] text-neutral-100 max-md:max-w-full max-md:text-4xl max-md:leading-10">
               Websites That Power Your Business Growth
             </div>
@@ -55,7 +56,7 @@ const ServiceTags: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col flex-1 shrink justify-center px-12 py-20 text-sm font-medium tracking-tight leading-none rounded-3xl border border-white border-solid basis-0 bg-neutral-800 min-w-60 text-neutral-100 max-md:px-5 max-md:max-w-full">
+    <div className="flex flex-col flex-1 shrink justify-center px-12 py-20 text-sm font-medium tracking-tight leading-none rounded-3xl border border-white border-solid basis-0 bg-neutral-800 lg:min-w-[320px] text-neutral-100 max-md:px-5 max-md:max-w-full">
       <div className="flex w-full min-h-[109px]" />
       <div className="flex flex-wrap gap-2 justify-center items-center self-center mt-2 max-w-full w-[294px]">
         {tags.map((tag, index) => (

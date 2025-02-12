@@ -1,52 +1,76 @@
-import React from "react";
+import { Link } from "@remix-run/react";
+import { useEffect, useState } from "react";
 
-interface NavbarProps {
-  theme?: "light" | "dark";
-}
+type NavbarProps = {
+  workToShowExists: boolean;
+};
 
-export const Navbar: React.FC<NavbarProps> = ({ theme = "light" }) => {
-  const textColor = theme === "dark" ? "text-neutral-100" : "text-stone-900";
-  const logoSrc =
-    theme === "dark"
-      ? "https://cdn.builder.io/api/v1/image/assets/58476e87985644dea27ee0e2029622cf/256d511106efc1fe1951d5f4f5fef5b92c8e78a770f5d2a6b675274318299e14?placeholderIfAbsent=true"
-      : "https://cdn.builder.io/api/v1/image/assets/58476e87985644dea27ee0e2029622cf/2f22c2a3286c781a0906f524da2d70f5189a6087e9583a0f6fa4ca0579230630?placeholderIfAbsent=true";
+export const Navbar: React.FC<NavbarProps> = ({ workToShowExists = false }) => {
+  const [logoSrc, setLogoSrc] = useState<string>("/studio_muni_logo_w.png"); // 0 = "dark" | 1 = "light"
+  const [textColor, setTextColor] = useState<string>("text-neutral-100");
+  const [bg, setBg] = useState<string>("bg-transparent");
+
+  useEffect(() => {
+    const a = document.getElementsByClassName("NavBar")[0];
+    const b = document.getElementsByClassName("IntroSection")[0];
+    const handleScroll = () => {
+      const isInDarkIntroSection =
+        window.scrollY > b.clientHeight - a.clientHeight;
+      if (isInDarkIntroSection) {
+        setLogoSrc("/studio_muni_logo_b.png");
+        setTextColor("text-neutral-900");
+        setBg("bg-orange-50");
+      } else {
+        setLogoSrc("/studio_muni_logo_w.png");
+        setTextColor("text-neutral-100");
+        setBg("bg-transparent");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div
-      className={`flex overflow-hidden justify-center items-start px-6 w-full text-base font-semibold whitespace-nowrap ${textColor} max-md:px-5 max-md:max-w-full`}
+      className={`NavBar flex overflow-hidden justify-center items-start  w-full text-base font-semibold whitespace-nowrap ${textColor} pt-4 px-5 md:px-6 ${bg} fixed`}
     >
-      <div className="flex flex-1 shrink justify-center items-center w-full basis-0 min-w-60 max-md:max-w-full">
-        <div className="flex flex-wrap flex-1 shrink gap-10 justify-between items-center self-stretch my-auto w-full basis-0 min-w-60 max-md:max-w-full">
-          {theme === "dark" ? (
-            <img
-              loading="lazy"
-              src={logoSrc}
-              className="object-contain shrink-0 self-stretch my-auto aspect-[5] w-[200px]"
-              alt="Logo"
-            />
-          ) : (
-            <div className="flex overflow-hidden flex-col justify-center self-stretch px-0.5 py-2 my-auto w-[200px]">
-              <div className="flex relative flex-col items-center px-5 pt-2.5 pb-1 aspect-[7.88] w-[197px] max-md:px-5">
-                <img
-                  loading="lazy"
-                  src={logoSrc}
-                  className="object-cover absolute inset-0 size-full"
-                  alt="Logo"
-                />
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/58476e87985644dea27ee0e2029622cf/97f43116d8f13ca03711c1ddce3d81c6f1dc78f89708bd0e66736cbe8a3ee8d7?placeholderIfAbsent=true"
-                  className="object-contain aspect-square w-[11px]"
-                  alt="Logo detail"
-                />
-              </div>
-            </div>
-          )}
-          <div className="flex overflow-hidden gap-8 items-center self-stretch my-auto min-w-60 max-md:max-w-full">
-            <div className="self-stretch px-3 py-6 my-auto">Work</div>
-            <div className="self-stretch px-3 py-6 my-auto">Service</div>
-            <div className="self-stretch px-3 py-6 my-auto">Pricing</div>
-            <div className="flex gap-3 justify-center items-center self-stretch px-6 py-2.5 my-auto leading-snug text-white bg-orange-600 rounded-[50px] max-md:px-5">
+      <div className="flex flex-col md:flex-row flex-1 shrink justify-center items-center w-full basis-0">
+        <div className="flex flex-wrap flex-1 shrink justify-between items-center self-stretch my-auto w-full basis-0 ">
+          <img
+            loading="lazy"
+            src={logoSrc}
+            className="object-contain shrink-0 self-stretch my-auto aspect-[5] w-[200px] mr-8"
+            alt="Logo"
+          />
+          <div className="flex overflow-hidden gap-8 items-center self-stretch my-auto min-w-60">
+            {workToShowExists && (
+              <Link
+                className="self-stretch px-3 py-6 my-auto"
+                to="#workSection"
+              >
+                Work
+              </Link>
+            )}
+            <Link
+              to="#serviceSection"
+              className="self-stretch px-3 py-6 my-auto"
+            >
+              Service
+            </Link>
+            <Link
+              to="#pricingSection"
+              className="self-stretch px-3 py-6 my-auto"
+            >
+              Pricing
+            </Link>
+            <Link
+              to="mailto:drewhlee75@gmail.com"
+              className="flex gap-3 justify-center items-center self-stretch px-6 py-2.5 my-auto leading-snug text-white bg-orange-600 rounded-[50px] max-md:px-5"
+            >
               <div className="self-stretch my-auto">Contact</div>
               <img
                 loading="lazy"
@@ -54,7 +78,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme = "light" }) => {
                 className="object-contain shrink-0 self-stretch my-auto w-4 aspect-square"
                 alt="Contact icon"
               />
-            </div>
+            </Link>
           </div>
         </div>
       </div>

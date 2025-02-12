@@ -1,0 +1,14 @@
+/* Commented out for now as this "Snap-Scroll" feature blocks window.scrollY value */
+
+/* .scroll-container {
+  scroll-snap-type: y mandatory;
+  overscroll-behavior-y: contain;
+  overflow-y: auto;
+  height: 100vh;
+} */
+
+/* Optional: Set height of each section to viewport height */
+/* .scroll-section {
+  scroll-snap-align: start;
+  height: 100vh;
+} */

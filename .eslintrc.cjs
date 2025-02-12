@@ -21,6 +21,11 @@ module.exports = {
   },
   ignorePatterns: ["!**/.server", "!**/.client"],
 
+  // Drew custom
+  rules: {
+    "react/prop-types": "off",
+  },
+
   // Base config
   extends: ["eslint:recommended"],
 

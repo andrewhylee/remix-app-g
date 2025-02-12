@@ -1,17 +1,12 @@
-import React from "react";
-import { Navbar } from "./Navbar";
-
 export const PricingSection: React.FC = () => {
   return (
-    <div className="w-full bg-indigo-950 max-md:max-w-full">
-      <div className="w-full min-h-[700px] max-md:max-w-full">
-        <Navbar theme="dark" />
-        <div className="flex overflow-hidden flex-col flex-1 justify-center px-6 py-4 w-full max-md:px-5 max-md:max-w-full">
-          <div className="flex flex-wrap flex-1 gap-3 size-full max-md:max-w-full">
-            <TimeRespectSection />
-            <PricingDetailsSection />
-          </div>
-        </div>
+    <div
+      id="pricingSection"
+      className="PricingSection scroll-section w-full bg-indigo-950 pt-4 pb-1"
+    >
+      <div className="flex max-xl:flex-col flex-1 justify-center px-6 py-4 w-full max-md:px-5 gap-3">
+        <TimeRespectSection />
+        <PricingDetailsSection />
       </div>
     </div>
   );
@@ -26,8 +21,8 @@ const TimeRespectSection: React.FC = () => {
   ];
 
   return (
-    <div className="flex flex-col items-end px-12 py-20 bg-orange-50 rounded-3xl border border-white border-solid min-w-60 w-[578px] max-md:px-5 max-md:max-w-full">
-      <div className="max-w-full text-6xl font-semibold tracking-tight leading-none text-zinc-900 w-[482px] max-md:max-w-full max-md:text-4xl">
+    <div className="flex flex-col px-12 py-20 bg-orange-50 rounded-3xl border border-white border-solid min-w-60 max-md:px-5 max-md:max-w-full">
+      <div className="max-w-full flex-start text-6xl font-semibold tracking-tight leading-none text-zinc-900  max-md:max-w-full max-md:text-4xl">
         We Respect Your Time
       </div>
       <div className="self-stretch mt-11 w-full text-2xl font-medium tracking-tighter leading-tight text-zinc-900 max-md:mt-10 max-md:max-w-full">
@@ -98,7 +93,7 @@ const PricingDetailsSection: React.FC = () => {
   ];
 
   return (
-    <div className="flex-1 shrink px-12 py-20 bg-orange-50 rounded-3xl border border-white border-solid basis-0 min-w-60 max-md:px-5 max-md:max-w-full">
+    <div className="flex-1 shrink px-12 py-20 bg-orange-50 rounded-3xl border border-white border-solid basis-0 min-w-[40rem] max-md:px-5 max-md:max-w-full">
       <div className="text-6xl font-semibold tracking-tight leading-none text-zinc-900 max-md:max-w-full max-md:text-4xl">
         Clear Pricing, Exceptional Results
       </div>
