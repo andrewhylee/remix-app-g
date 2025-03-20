@@ -24,6 +24,7 @@ module.exports = {
   // Drew custom
   rules: {
     "react/prop-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
   },
 
   // Base config
