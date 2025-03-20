@@ -38,3 +38,14 @@ Make sure to deploy the output of `npm run build`
 ## Styling
 
 This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever css framework you prefer. See the [Vite docs on css](https://vitejs.dev/guide/features.html#css) for more information.
+
+## Custom Notes
+
+### Tailwind breakpoints
+
+Breakpoint prefix Minimum width CSS
+sm 40rem (640px) @media (width >= 40rem) { ... }
+md 48rem (768px) @media (width >= 48rem) { ... }
+lg 64rem (1024px) @media (width >= 64rem) { ... }
+xl 80rem (1280px) @media (width >= 80rem) { ... }
+2xl 96rem (1536px) @media (width >= 96rem) { ... }

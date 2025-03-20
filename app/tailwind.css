@@ -11,3 +11,59 @@ body {
   }
   scroll-behavior: smooth;
 }
+
+:root {
+  --blue: #1e90ff;
+  --cream: #f6f2ea;
+  --cream1: #fafafa;
+  --yellow: #ffbe2e;
+  --purple: #3c8aff;
+  --mint: #519e00;
+  --pink: #ffa8cd;
+  --gray: #99948f;
+  --gray1: #71767d;
+  --dark-gray: #3d3b39;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 0.95;
+  letter-spacing: -5px;
+  font-family: Poppins; /* Replacement for Degular*/
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 1.1;
+  letter-spacing: -5px;
+  font-family: Poppins; /* Replacement for Degular*/
+}
+
+.text_body {
+  font-size: 1.125rem;
+  line-height: 1.25;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-family: Inter; /* Replacement for Figtree*/
+}
+
+.text_subtitle_2 {
+  font-size: 1.375rem;
+  line-height: 1.25;
+  font-weight: 400;
+  font-family: Inter; /* Replacement for Figtree*/
+}
+
+.text_button {
+  font-size: 1.125rem;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  font-family: Inter; /* Replacement for Figtree*/
+  opacity: unset;
+}
+
+.text_caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-family: Inter; /* Replacement for Figtree*/
+}

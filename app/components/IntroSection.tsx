@@ -2,56 +2,39 @@ import { Link } from "@remix-run/react";
 
 export const IntroSection: React.FC = () => {
   return (
-    <div className="IntroSection scroll-section px-6 pb-[3rem] md:pb-8 pt-36 sm:pt-24 w-full bg-[url(/hero_bg_1.png)]">
-      <div className="px-12 py-20 sm:mt-2 w-full rounded-3xl border border-white border-solid bg-neutral-100 bg-opacity-10">
-        <div className="max-w-[800px]">
-          <div className="text-4xl md:text-8xl font-semibold tracking-tighter leading-[90px] text-neutral-100 max-md:leading-10">
-            Modern Websites For Established Pros
-          </div>
-          <div className="mt-11 text-2xl tracking-tighter leading-7 text-neutral-100 max-md:mt-10 max-md:max-w-full">
-            We help established businesses stand out with striking design and
-            high-performing websites. While competitors look outdated,
-            you&apos;ll become the fresh face clients remember.
-          </div>
+    <div className="IntroSection mt-14 w-full">
+      <div className="mb-10 rounded-3xl border border-white border-solid bg-neutral-100 bg-opacity-10">
+        <h1>An Outdated Website Is Costing You Clients</h1>
+        <div className="mt-11 text-2xl text_body leading-7 text-gray-500 max-md:mt-10 max-md:max-w-full">
+          First impressions matter. An outdated site drives clients away.
         </div>
       </div>
-      <div className="flex max-md:flex-col md:flex-wrap gap-4 justify-center items-center mt-5 w-full">
-        <div className="flex flex-col flex-1 shrink justify-center self-stretch my-auto rounded-3xl basis-0 min-w-60 px-5 md:px-12 ">
-          <div className="flex flex-wrap gap-10 justify-center items-center w-full max-md:max-w-full">
-            {[".avif", ".svg", ".png"].map((ext, index) => (
-              <div
-                key={index}
-                className="flex flex-col justify-center items-center self-stretch my-auto w-[154px] "
-              >
-                <img
-                  loading="lazy"
-                  src={`/logo_${index + 1}${ext}`}
-                  className={
-                    "object-contain max-w-full aspect-[4.39] w-[101px] h-32"
-                  }
-                  alt={`Partner logo ${index + 1}`}
-                />
-              </div>
-            ))}
+      <div className="flex flex-col bg-[url(/colorful_img_1.png)]  px-4 py-10 gap-10 mb-32 ">
+        <div className="bg-black text-white rounded-full w-fit px-8 py-4 ml-2 text-sm">
+          <span className="mr-4 px-[0.45rem] rounded-full text-yellow-300 bg-yellow-300">
+            .
+          </span>
+          Accepting New Clients
+        </div>
+        <div>
+          <h2>Upgrade Your Website Today</h2>
+          <div className="text-sm pt-4 text_body">
+            Simple process. Transparent pricing.
           </div>
         </div>
+
         <Link
-          to="#pricingSection"
-          className="flex flex-col justify-center items-center px-5 md:px-12 py-5 bg-orange-600 rounded-3xl min-w-60 max-md:w-full  text-neutral-100"
+          to="#pricing"
+          className="flex justify-center self-center sm:self-start px-5 py-5 bg-black rounded-3xl min-w-72 max-w-xxl text-neutral-100 text-xl"
         >
-          <div className="text-base tracking-normal">
-            Fixed pricing. Starts at $3,500.
-          </div>
-          <div className="flex gap-4 items-center mt-1 text-2xl font-semibold tracking-tight">
-            <div className="self-stretch my-auto">See Pricing</div>
-            <img
-              loading="lazy"
-              src="https://cdn.builder.io/api/v1/image/assets/58476e87985644dea27ee0e2029622cf/2f2864ef0e345aeba2af16bc6eecb5c094bb41e777ed23cdbfe8f1ff751d09f6?placeholderIfAbsent=true"
-              className="object-contain shrink-0 self-stretch my-auto w-6 aspect-square"
-              alt="Pricing arrow"
-            />
-          </div>
+          See Pricing
         </Link>
+        <a
+          href="mailto:drewhlee75@gmail.com"
+          className="flex text-sm underline self-center"
+        >
+          Have a question? Email Us
+        </a>
       </div>
     </div>
   );
