@@ -31,7 +31,7 @@ export const Section3: React.FC<Section3Props> = ({ className = "" }) => {
             <p className="self-start ml-5 text_caption text-[var(--gray1)]">
               A fast, streamlined way to refresh your website
             </p>
-            <p>-----------------------------------------------</p>
+            <p>--------------------------------------</p>
             <p className="self-start ml-5 text_body">What’s included</p>
             <ul className="self-start ml-8 list-disc text_caption">
               <li>Website Redesign & Development </li>
